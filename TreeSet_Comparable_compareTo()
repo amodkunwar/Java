@@ -1,0 +1,60 @@
+package com.setdemo;
+
+public class Student implements Comparable<Object> {
+
+	private int id;
+	private String name;
+	private double percentage;
+
+	public Student() {
+		System.out.println(this.getClass().getSimpleName() + " object created");
+	}
+
+	public Student(int id, String name, double percentage) {
+		this.id = id;
+		this.name = name;
+		this.percentage = percentage;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", percentage=" + percentage + "]";
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Student student = (Student) o;
+		return new Double(this.percentage).compareTo(student.percentage);
+	}
+}
+==========================================================================================================================================
+package com.setdemo;
+
+public class Student implements Comparable<Object> {
+
+	private int id;
+	private String name;
+	private double percentage;
+
+	public Student() {
+		System.out.println(this.getClass().getSimpleName() + " object created");
+	}
+
+	public Student(int id, String name, double percentage) {
+		this.id = id;
+		this.name = name;
+		this.percentage = percentage;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", percentage=" + percentage + "]";
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Student student = (Student) o;
+		return new Double(this.percentage).compareTo(student.percentage);
+	}
+
+}
