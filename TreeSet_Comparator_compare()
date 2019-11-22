@@ -1,0 +1,56 @@
+package com.setdemo;
+
+import java.util.Comparator;
+
+public class Student implements Comparator<Object> {
+
+	private int id;
+	private String name;
+	private double percentage;
+
+	public Student() {
+		System.out.println(this.getClass().getSimpleName() + " object created");
+	}
+
+	public Student(int id, String name, double percentage) {
+		this.id = id;
+		this.name = name;
+		this.percentage = percentage;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", percentage=" + percentage + "]";
+	}
+
+	@Override
+	public int compare(Object o1, Object o2) {
+		Student s1 = (Student)o1;
+		Student s2 = (Student)o2;
+		return s1.name.compareTo(s2.name);
+	}
+}
+
+==========================================================================================================================================
+
+package com.setdemo;
+
+import java.util.TreeSet;
+
+public class StudentReport {
+
+	public static void main(String[] args) {
+
+		TreeSet<Student> ts = new TreeSet<>();
+
+		ts.add(new Student(1, "Amod", 89.9));
+		ts.add(new Student(2, "Ankita", 99.9));
+		ts.add(new Student(3, "Swaro", 79.9));
+		ts.add(new Student(4, "Kunwar", 69.9));
+
+		for (Object o : ts) {
+			System.out.println(o);
+		}
+	}
+}
+
