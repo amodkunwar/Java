@@ -1,0 +1,74 @@
+package com.setdemo;
+
+public class Student {
+	
+	private int id;
+	private String name;
+	
+	public Student() {
+		System.out.println(this.getClass().getSimpleName() + " object created");
+	}
+
+	public Student(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + "]";
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.id;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean isSame = false;
+		if(obj instanceof Student) {
+			Student student = (Student)obj;
+			if(this.id == student.id) {
+				isSame = true;
+			}
+		}
+		return isSame;
+	}
+}
+=================================================================================================================================
+
+package com.setdemo;
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class StudentReport {
+
+	public static Student getReport() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Id");
+		int id = scanner.nextInt();
+		System.out.println("Enter Name");
+		String name = scanner.next();
+		return new Student(id, name);
+	}
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		HashSet<Student> hs = new HashSet<>();
+		do {
+			Student report = getReport();
+			hs.add(report);
+			System.out.println("Do you want to add more Student ?");
+			String answer = scanner.next();
+			if(answer.equalsIgnoreCase("No")) {
+				break;
+			}
+		}while(true);
+		for(Object o : hs) {
+			System.out.println(o);
+		}
+	}	
+}
