@@ -1,0 +1,43 @@
+// For double percentage;
+
+@Override
+	public int compareTo(Object o) {
+		Student student = (Student) o;
+		return new Double(this.percentage).compareTo(student.percentage);
+	}
+  
+  =======================================================================================================================================
+  // For int id;
+  
+  @Override
+	public int compareTo(Object o) {
+		Student student = (Student) o;
+		return this.id - student.id;
+	}
+	
+	// if +ve = right side
+	// if -ve = left side
+	// if 0 = Ignore
+  
+  ========================================================================================================================================
+  // For String name;
+  
+  @Override
+	public int compareTo(Object o) {
+		Student student = (Student) o;
+		return this.name.compareTo(student.name);
+	}
+  
+  ========================================================================================================================================
+  // for double percentage;
+  
+  @Override
+	public int compareTo(Object o) {
+		Student student = (Student) o;
+		if (this.percentage > student.percentage) {
+			return +1;
+		} else if (this.percentage < student.percentage) {
+			return -1;
+		} else
+			return 0;
+	}
