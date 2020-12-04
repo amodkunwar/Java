@@ -1,0 +1,11 @@
+Using comparator how to sort the values without changing the model.
+
+Collections.sort(list, (i1, i2) -> i1.compareTo(i2)); // using lamda operation
+
+OR
+
+		Collections.sort(list1, new Comparator() {
+			public int compare(Integer i1, Integer i2) {
+				return i1.compareTo(i2);
+			}
+		});
